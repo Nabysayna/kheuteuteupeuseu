@@ -1,0 +1,22 @@
+{
+    "name": "bbsinvestcrm",
+    "authors": [
+        {
+            "name": "bbsinvest",
+            "email": "bbsinvest@bbstvnet.com"
+        }
+    ],
+    
+    "autoload":{
+        "psr-4":{
+            "App\\":"app/"
+        },
+        "classmap": [
+            "lib/"
+        ]
+    },
+    
+    "require": {
+        "slim/slim": "^3.7"
+    }
+}
