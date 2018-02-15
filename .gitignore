@@ -1,0 +1,9 @@
+vendor
+/vendor
+vendor/*
+composer.lock
+.idea/*
+.idea
+/.idea
+config/*
+config

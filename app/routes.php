@@ -32,7 +32,6 @@ $app->group('/ecom',function(){
 });
 $app->group('/wizall',function(){
     $this->post('/recuperefacturesde',App\Controllers\WizallPlatformController::class .':recuperefacturesde');
-
-
 });
+
 
