@@ -23,12 +23,15 @@ class AdminpdvPlatformController extends Controller {
     public function listuserpdv(Request $request, Response $response, $args){
         return $this->requestsoap($request, 'listuserpdv');
     }
+
     public function modifypdv(Request $request, Response $response, $args){
         return $this->requestsoap($request, 'modifypdv');
     }
+
     public function deconnectpdv(Request $request, Response $response, $args){
         return $this->requestsoap($request, 'deconnectpdv');
     }
+
     public function autoriservoirdepot(Request $request, Response $response, $args){
         return $this->requestsoap($request, 'autoriservoirdepot');
     }
@@ -45,15 +48,6 @@ class AdminpdvPlatformController extends Controller {
         $result = $this->requestsoap($request, 'validerDemandeDepot');
         return $response->withJson(array('response' =>$result));
     }
-
-    public function creerProfilCaissier(Request $request, Response $response, $args){
-        $data=$request->getParsedBody();
-        $params=json_decode($data['nvelInscrit']);
-        $client=new \nusoap_client('http://51.254.200.129/backendprod/EsquisseBackEnd/web/app.php/invest/logging?wsdl',true);
-        $result=$client->call("creerProfilCaissier",array('nvelInscrit'=>$params));
-        return $response->withJson(array('response' =>$result));
-    }
-
 
     public function detailperformancepdv(Request $request, Response $response, $args){
         return $response->withJson(array('prenom' =>'magor'));
@@ -73,6 +67,12 @@ class AdminpdvPlatformController extends Controller {
         $client=new \nusoap_client($this->link,true);
         $result=$client->call($methode,array('params'=>$params));
         return $result;
+    }
+
+    public function responseTest($request, $response){
+        $data=$request->getParsedBody();
+        $params=json_decode($data['params']);
+        return $response->withJson(array('prenom' =>$params));
     }
 
 
