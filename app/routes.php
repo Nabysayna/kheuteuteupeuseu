@@ -111,6 +111,10 @@ $app->group('/adminmultidpv-sen',function(){
 
     $this->post('/listmap',App\Controllers\AdminmultipdvPlatformController::class .':listmap');
 
+    $this->post('/listcreditmanager',App\Controllers\AdminmultipdvPlatformController::class .':listcreditmanager');
+
+    $this->post('/ajoutcreditmanager',App\Controllers\AdminmultipdvPlatformController::class .':ajoutcreditmanager');
+
 });
 
 
