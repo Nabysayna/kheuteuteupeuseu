@@ -46,6 +46,15 @@ $app->group('/utils-adminpdv',function(){
     $this->post('/getdetailonepointsuivisentool',App\Controllers\UtilsPlatformController::class .':getdetailonepointsuivisentool');
     $this->post('/initajoutdeposit',App\Controllers\UtilsPlatformController::class .':initajoutdeposit');
     $this->post('/demndedeposit',App\Controllers\UtilsPlatformController::class .':demndedeposit');
+
+    $this->post('/inputfiledemndedeposit',App\Controllers\UtilsPlatformController::class .':inputfiledemndedeposit');
+});
+
+
+$app->group('/uploads-sen',function(){
+
+    $this->post('/inputfiledemndedeposit',App\Controllers\UploadsPlatformController::class .':inputfiledemndedeposit');
+
 });
 
 
