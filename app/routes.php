@@ -1,11 +1,28 @@
 <?php
 
-$app->group('/utils-adminpdv',function(){
+$app->group('/utils-crm',function(){
+    $this->post('/region',App\Controllers\UtilsPlatformController::class .':region');
+    $this->post('/zone',App\Controllers\UtilsPlatformController::class .':zone');
+    $this->post('/souszonebyzonebyregion',App\Controllers\UtilsPlatformController::class .':souszonebyzonebyregion');
+});
+
+
+$app->group('/utils-sen',function(){
+
     $this->post('/getdetailonepointsuivisentool',App\Controllers\UtilsPlatformController::class .':getdetailonepointsuivisentool');
+
     $this->post('/initajoutdeposit',App\Controllers\UtilsPlatformController::class .':initajoutdeposit');
+
     $this->post('/demndedeposit',App\Controllers\UtilsPlatformController::class .':demndedeposit');
 
+    $this->post('/consulterLanceurDalerte',App\Controllers\UtilsPlatformController::class .':consulterLanceurDalerte');
+
+    $this->post('/isDepotCheckAuthorized',App\Controllers\UtilsPlatformController::class .':isDepotCheckAuthorized');
+
+    $this->post('/checkCaution',App\Controllers\UtilsPlatformController::class .':checkCaution');
+
     $this->post('/inputfiledemndedeposit',App\Controllers\UtilsPlatformController::class .':inputfiledemndedeposit');
+
 });
 
 
@@ -164,14 +181,6 @@ $app->group('/comptabilite-sen',function(){
 });
 
 
-
-$app->group('/util-crm',function(){
-    $this->post('/region',App\Controllers\UtilsPlatformController::class .':region');
-    $this->post('/zone',App\Controllers\UtilsPlatformController::class .':zone');
-    $this->post('/souszonebyzonebyregion',App\Controllers\UtilsPlatformController::class .':souszonebyzonebyregion');
-});
-
-
 $app->group('/demandepret-sen',function(){
 
     $this->post('/demandepret',App\Controllers\DemandepretPlatformController::class .':demandepret');
@@ -185,7 +194,6 @@ $app->group('/demandepret-sen',function(){
 
 
 /////////////////////////////////
-///
 $app->group('/webservice', function () {
     $this->post('/checkNumber', App\Controllers\TntPlatformController::class .':checkNumber');
     $this->post('/abonner', App\Controllers\TntPlatformController::class .':abonner');

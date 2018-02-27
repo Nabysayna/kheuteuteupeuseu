@@ -31,8 +31,6 @@ class TntPlatformController extends Controller {
 		header("Access-Control-Allow-Headers: Content-Type");
 		$data = $request->getParsedBody();
         $params = json_decode($data['params']);
-        //$token=$params->token;
-        //$chip=$params->numeroCarteChip;
         $client = new \nusoap_client('http://51.254.200.129/backendprod/EsquisseBackEnd/web/app.php/invest/tnt?wsdl', true);
         $nvelInscrit = array('token' => $params->token,'prenom'=>$params->prenom,'nom'=>$params->nom,'tel'=>$params->tel,'adresse'=>$params->adresse,'region'=>$params->region,'city'=>$params->city,'cni'=>$params->cni,'numerochip'=>$params->numerochip,'numerocarte'=>$params->numerocarte,'duree'=>$params->duree,'typedebouquet'=>$params->typedebouquet,'montant'=>$params->montant);
         $result = $client->call('ajoutabonnement', array('params' => $nvelInscrit));
