@@ -37,11 +37,11 @@ class ComptabilitePlatformController extends Controller {
     }
 
     public function supprimerservice(Request $request, Response $response, $args){
-        return $this->requestsoap($request, 'autoriservoirdepot');
+        return $this->requestsoap($request, 'supprimerservice');
     }
 
     public function modifierservice(Request $request, Response $response, $args){
-        return $this->requestsoap($request, 'bilandeposit');
+        return $this->requestsoap($request, 'modifierservice');
     }
 
     public function ajoutservice(Request $request, Response $response, $args){
@@ -57,11 +57,11 @@ class ComptabilitePlatformController extends Controller {
     }
 
     public function listeservice(Request $request, Response $response, $args){
-        return $this->requestsoap($request, 'approvisionner');
+        return $this->requestsoap($request, 'listeservice');
     }
 
     public function etatcaisse(Request $request, Response $response, $args){
-        return $this->requestsoap($request, 'approvisionner');
+        return $this->requestsoap($request, 'etatcaisse');
     }
 
     public function validerapprovisionn(Request $request, Response $response, $args){

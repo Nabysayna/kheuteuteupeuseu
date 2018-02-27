@@ -1,53 +1,30 @@
 <?php
 
-$app->group('/webservice', function () {
-    $this->post('/checkNumber', App\Controllers\TntPlatformController::class .':checkNumber');
-    $this->post('/abonner', App\Controllers\TntPlatformController::class .':abonner');
-    $this->post('/listabonnement', App\Controllers\TntPlatformController::class .':listabonnement');
-    $this->post('/ventedecodeur', App\Controllers\TntPlatformController::class .':ventedecodeur');
-    $this->post('/listeventedecodeur', App\Controllers\TntPlatformController::class .':listeventedecodeur');
-    $this->post('/listeventecarte', App\Controllers\TntPlatformController::class .':listeventecarte');
-});
-$app->group('/orangemoney',function(){
-    $this->post('/depot',App\Controllers\OrangemoneyPlatformController::class .':depot');
-    $this->post('/reponse',App\Controllers\OrangemoneyPlatformController::class .':reponse');
-});
-$app->group('/postcash',function(){
-    $this->post('/rechargementespece',App\Controllers\PostcashPlatformController::class .':rechargementespece');
-    $this->post('/achatjula',App\Controllers\PostcashPlatformController::class .':achatjula');
-    $this->post('/detailfacturesenelec',App\Controllers\PostcashPlatformController::class .':detailfacturesenelec');
-    $this->post('/reglementsenelec',App\Controllers\PostcashPlatformController::class .':reglementsenelec');
-    $this->post('/achatcodewoyofal',App\Controllers\PostcashPlatformController::class .':achatcodewoyofal');
-    $this->post('/oolusolar',App\Controllers\PostcashPlatformController::class .':oolusolar');
-
-});
-$app->group('/gestion',function(){
-    $this->post('/reportingdate',App\Controllers\GestionPlatformController::class .':reportingdate');
-    $this->post('/gestionreporting',App\Controllers\GestionPlatformController::class .':gestionreporting');
-});
-$app->group('/ecom',function(){
-    $this->post('/listeArticles',App\Controllers\EcomPlatformController::class .':listeArticles');
-    $this->post('/ajouterarticle',App\Controllers\EcomPlatformController::class .':ajouterarticle');
-
-});
-$app->group('/wizall',function(){
-    $this->post('/recuperefacturesde',App\Controllers\WizallPlatformController::class .':recuperefacturesde');
-});
-
-
-$app->group('/util',function(){
-    $this->post('/region',App\Controllers\UtilsPlatformController::class .':region');
-    $this->post('/zone',App\Controllers\UtilsPlatformController::class .':zone');
-    $this->post('/souszonebyzonebyregion',App\Controllers\UtilsPlatformController::class .':souszonebyzonebyregion');
-});
-
-
 $app->group('/utils-adminpdv',function(){
     $this->post('/getdetailonepointsuivisentool',App\Controllers\UtilsPlatformController::class .':getdetailonepointsuivisentool');
     $this->post('/initajoutdeposit',App\Controllers\UtilsPlatformController::class .':initajoutdeposit');
     $this->post('/demndedeposit',App\Controllers\UtilsPlatformController::class .':demndedeposit');
 
     $this->post('/inputfiledemndedeposit',App\Controllers\UtilsPlatformController::class .':inputfiledemndedeposit');
+});
+
+
+$app->group('/gestionreporting-sen',function(){
+
+    $this->post('/reportingdate',App\Controllers\GestionreportingPlatformController::class .':reportingdate');
+
+    $this->post('/reimpression',App\Controllers\GestionreportingPlatformController::class .':reimpression');
+
+    $this->post('/gestionreporting',App\Controllers\GestionreportingPlatformController::class .':gestionreporting');
+
+    $this->post('/servicepoint',App\Controllers\GestionreportingPlatformController::class .':servicepoint');
+
+    $this->post('/ajoutdepense',App\Controllers\GestionreportingPlatformController::class .':ajoutdepense');
+
+    $this->post('/reclamation',App\Controllers\GestionreportingPlatformController::class .':reclamation');
+
+    $this->post('/vente',App\Controllers\GestionreportingPlatformController::class .':vente');
+
 });
 
 
@@ -150,7 +127,7 @@ $app->group('/crm-sen',function(){
 });
 
 
-$app->group('/comptabilite-adminpdv',function(){
+$app->group('/comptabilite-sen',function(){
 
     $this->post('/userexploitation',App\Controllers\ComptabilitePlatformController::class .':userexploitation');
 
@@ -176,21 +153,75 @@ $app->group('/comptabilite-adminpdv',function(){
 
     $this->post('/listeservice',App\Controllers\ComptabilitePlatformController::class .':listeservice');
 
-    $this->post('/etatcaisse',App\Controllers\ComptabilitePlatformController::class .':etatcaisse');
-
-    $this->post('/validerapprovisionn',App\Controllers\ComptabilitePlatformController::class .':validerapprovisionn');
-
     $this->post('/listerevenu',App\Controllers\ComptabilitePlatformController::class .':listerevenu');
 
     $this->post('/listerevenutransfert',App\Controllers\ComptabilitePlatformController::class .':listerevenutransfert');
 
+    $this->post('/etatcaisse',App\Controllers\ComptabilitePlatformController::class .':etatcaisse');
+
+    $this->post('/validerapprovisionn',App\Controllers\ComptabilitePlatformController::class .':validerapprovisionn');
+
+});
+
+
+
+$app->group('/util-crm',function(){
+    $this->post('/region',App\Controllers\UtilsPlatformController::class .':region');
+    $this->post('/zone',App\Controllers\UtilsPlatformController::class .':zone');
+    $this->post('/souszonebyzonebyregion',App\Controllers\UtilsPlatformController::class .':souszonebyzonebyregion');
 });
 
 
-$app->group('/admindpv-sup',function(){
-    $this->post('/detailperformancepdv',App\Controllers\AdminpdvPlatformController::class .':detailperformancepdv');
+$app->group('/demandepret-sen',function(){
 
-    $this->post('/performancepdv',App\Controllers\AdminpdvPlatformController::class .':performancepdv');
-    $this->post('/notifications',App\Controllers\AdminpdvPlatformController::class .':notifications');
+    $this->post('/demandepret',App\Controllers\DemandepretPlatformController::class .':demandepret');
+
+    $this->post('/envoyerDemandeDepretCofina',App\Controllers\DemandepretPlatformController::class .':envoyerDemandeDepretCofina');
+
+    $this->post('/ajoutdemandepret',App\Controllers\DemandepretPlatformController::class .':ajoutdemandepret');
 
 });
+
+
+
+/////////////////////////////////
+///
+$app->group('/webservice', function () {
+    $this->post('/checkNumber', App\Controllers\TntPlatformController::class .':checkNumber');
+    $this->post('/abonner', App\Controllers\TntPlatformController::class .':abonner');
+    $this->post('/listabonnement', App\Controllers\TntPlatformController::class .':listabonnement');
+    $this->post('/ventedecodeur', App\Controllers\TntPlatformController::class .':ventedecodeur');
+    $this->post('/listeventedecodeur', App\Controllers\TntPlatformController::class .':listeventedecodeur');
+    $this->post('/listeventecarte', App\Controllers\TntPlatformController::class .':listeventecarte');
+});
+
+
+$app->group('/orangemoney',function(){
+    $this->post('/depot',App\Controllers\OrangemoneyPlatformController::class .':depot');
+    $this->post('/reponse',App\Controllers\OrangemoneyPlatformController::class .':reponse');
+});
+
+
+$app->group('/postcash',function(){
+    $this->post('/rechargementespece',App\Controllers\PostcashPlatformController::class .':rechargementespece');
+    $this->post('/achatjula',App\Controllers\PostcashPlatformController::class .':achatjula');
+    $this->post('/detailfacturesenelec',App\Controllers\PostcashPlatformController::class .':detailfacturesenelec');
+    $this->post('/reglementsenelec',App\Controllers\PostcashPlatformController::class .':reglementsenelec');
+    $this->post('/achatcodewoyofal',App\Controllers\PostcashPlatformController::class .':achatcodewoyofal');
+    $this->post('/oolusolar',App\Controllers\PostcashPlatformController::class .':oolusolar');
+
+});
+
+
+$app->group('/ecom',function(){
+    $this->post('/listeArticles',App\Controllers\EcomPlatformController::class .':listeArticles');
+    $this->post('/ajouterarticle',App\Controllers\EcomPlatformController::class .':ajouterarticle');
+
+});
+
+
+$app->group('/wizall',function(){
+    $this->post('/recuperefacturesde',App\Controllers\WizallPlatformController::class .':recuperefacturesde');
+});
+
+
