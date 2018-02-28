@@ -10,6 +10,7 @@ use \App\Controller;
 
 
 class PostcashPlatformController extends Controller {
+
     public function rechargementespece(Request $request,Response $response,$args){
         header("Access-Control-Allow-Origin: *");
 		header("Access-Control-Allow-Headers: Content-Type");
@@ -20,6 +21,7 @@ class PostcashPlatformController extends Controller {
         $result=$client->call('rechargementespece',array('params'=>$espece));
         return $response->withJson($result);
     }
+
     public function achatjula(Request $request,Response $response,$args){
         header("Access-Control-Allow-Origin: *");
         header("Access-Control-Allow-Headers: Content-Type");
@@ -30,6 +32,7 @@ class PostcashPlatformController extends Controller {
         $result=$client->call('achatjula',array('params'=>$espece));
         return $response->withJson($result);
     }
+
     public function detailfacturesenelec(Request $request,Response $response,$args){
         header("Access-Control-Allow-Origin: *");
         header("Access-Control-Allow-Headers: Content-Type");
@@ -40,6 +43,7 @@ class PostcashPlatformController extends Controller {
         $result=$client->call('detailfacturesenelec',array('params'=>$detail));
         return $response->withJson($result);
     }
+
     public function reglementsenelec(Request $request,Response $response,$args){
         header("Access-Control-Allow-Origin: *");
         header("Access-Control-Allow-Headers: Content-Type");
@@ -52,6 +56,7 @@ class PostcashPlatformController extends Controller {
         
 
     }
+
     public function achatcodewoyofal(Request $request,Response $response,$args){
         header("Access-Control-Allow-Origin: *");
         header("Access-Control-Allow-Headers: Content-Type");
@@ -62,6 +67,7 @@ class PostcashPlatformController extends Controller {
         $result=$client->call('achatcodewoyofal',array('params'=>$detail));
         return $response->withJson($result);
     }
+
     public function oolusolar(Request $request,Response $response,$args){
         header("Access-Control-Allow-Origin: *");
         header("Access-Control-Allow-Headers: Content-Type");

@@ -201,6 +201,54 @@ $app->group('/apitnt', function () {
     $this->post('/listeventecarte', App\Controllers\TntPlatformController::class .':listeventecarte');
 });
 
+$app->group('/postcash-sen',function(){
+
+    $this->post('/rechargementespece',App\Controllers\PostcashPlatformController::class .':rechargementespece');
+
+    $this->post('/achatjula',App\Controllers\PostcashPlatformController::class .':achatjula');
+
+    $this->post('/detailfacturesenelec',App\Controllers\PostcashPlatformController::class .':detailfacturesenelec');
+
+    $this->post('/reglementsenelec',App\Controllers\PostcashPlatformController::class .':reglementsenelec');
+
+    $this->post('/achatcodewoyofal',App\Controllers\PostcashPlatformController::class .':achatcodewoyofal');
+
+    $this->post('/oolusolar',App\Controllers\PostcashPlatformController::class .':oolusolar');
+
+});
+
+
+
+$app->group('/ecom-sen',function(){
+
+    $this->post('/listerarticle',App\Controllers\EcomPlatformController::class .':listerarticle');
+
+    $this->post('/ajoutarticle',App\Controllers\EcomPlatformController::class .':ajoutarticle');
+
+    $this->post('/ajoutcommande',App\Controllers\EcomPlatformController::class .':ajoutcommande');
+
+    $this->post('/receptionnerCommandes',App\Controllers\EcomPlatformController::class .':receptionnerCommandes');
+
+    $this->post('/supprimerArticle',App\Controllers\EcomPlatformController::class .':supprimerArticle');
+
+    $this->post('/modifierArticle',App\Controllers\EcomPlatformController::class .':modifierArticle');
+
+    $this->post('/assignerCourse',App\Controllers\EcomPlatformController::class .':assignerCourse');
+
+    $this->post('/prendreCommande',App\Controllers\EcomPlatformController::class .':prendreCommande');
+
+    $this->post('/fournirCommandes',App\Controllers\EcomPlatformController::class .':fournirCommandes');
+
+    $this->post('/listerCategorie',App\Controllers\EcomPlatformController::class .':listerCategorie');
+
+    $this->post('/listercommande',App\Controllers\EcomPlatformController::class .':listercommande');
+
+    $this->post('/listerCoursier',App\Controllers\EcomPlatformController::class .':listerCoursier');
+
+    $this->post('/listervente',App\Controllers\EcomPlatformController::class .':listervente');
+
+});
+
 
 
 /////////////////////////////////
@@ -208,25 +256,6 @@ $app->group('/apitnt', function () {
 $app->group('/orangemoney',function(){
     $this->post('/depot',App\Controllers\OrangemoneyPlatformController::class .':depot');
     $this->post('/reponse',App\Controllers\OrangemoneyPlatformController::class .':reponse');
-});
-
-
-$app->group('/postcash',function(){
-    $this->post('/rechargementespece',App\Controllers\PostcashPlatformController::class .':rechargementespece');
-    $this->post('/achatjula',App\Controllers\PostcashPlatformController::class .':achatjula');
-    $this->post('/detailfacturesenelec',App\Controllers\PostcashPlatformController::class .':detailfacturesenelec');
-    $this->post('/reglementsenelec',App\Controllers\PostcashPlatformController::class .':reglementsenelec');
-    $this->post('/achatcodewoyofal',App\Controllers\PostcashPlatformController::class .':achatcodewoyofal');
-    $this->post('/oolusolar',App\Controllers\PostcashPlatformController::class .':oolusolar');
-
-});
-
-
-$app->group('/ecom',function(){
-    $this->post('/listeArticles',App\Controllers\EcomPlatformController::class .':listeArticles');
-
-    $this->post('/ajouterarticle',App\Controllers\EcomPlatformController::class .':ajouterarticle');
-
 });
 
 
