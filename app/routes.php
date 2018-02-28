@@ -192,9 +192,7 @@ $app->group('/demandepret-sen',function(){
 });
 
 
-
-/////////////////////////////////
-$app->group('/webservice', function () {
+$app->group('/apitnt', function () {
     $this->post('/checkNumber', App\Controllers\TntPlatformController::class .':checkNumber');
     $this->post('/abonner', App\Controllers\TntPlatformController::class .':abonner');
     $this->post('/listabonnement', App\Controllers\TntPlatformController::class .':listabonnement');
@@ -204,6 +202,9 @@ $app->group('/webservice', function () {
 });
 
 
+
+/////////////////////////////////
+///
 $app->group('/orangemoney',function(){
     $this->post('/depot',App\Controllers\OrangemoneyPlatformController::class .':depot');
     $this->post('/reponse',App\Controllers\OrangemoneyPlatformController::class .':reponse');
@@ -223,6 +224,7 @@ $app->group('/postcash',function(){
 
 $app->group('/ecom',function(){
     $this->post('/listeArticles',App\Controllers\EcomPlatformController::class .':listeArticles');
+
     $this->post('/ajouterarticle',App\Controllers\EcomPlatformController::class .':ajouterarticle');
 
 });
