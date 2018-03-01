@@ -185,6 +185,8 @@ $app->group('/demandepret-sen',function(){
 
     $this->post('/demandepret',App\Controllers\DemandepretPlatformController::class .':demandepret');
 
+    $this->post('/consulterpret',App\Controllers\DemandepretPlatformController::class .':consulterpret');
+
     $this->post('/envoyerDemandeDepretCofina',App\Controllers\DemandepretPlatformController::class .':envoyerDemandeDepretCofina');
 
     $this->post('/ajoutdemandepret',App\Controllers\DemandepretPlatformController::class .':ajoutdemandepret');
@@ -193,13 +195,21 @@ $app->group('/demandepret-sen',function(){
 
 
 $app->group('/apitnt', function () {
+
     $this->post('/checkNumber', App\Controllers\TntPlatformController::class .':checkNumber');
+
     $this->post('/abonner', App\Controllers\TntPlatformController::class .':abonner');
+
     $this->post('/listabonnement', App\Controllers\TntPlatformController::class .':listabonnement');
+
     $this->post('/ventedecodeur', App\Controllers\TntPlatformController::class .':ventedecodeur');
+
     $this->post('/listeventedecodeur', App\Controllers\TntPlatformController::class .':listeventedecodeur');
+
     $this->post('/listeventecarte', App\Controllers\TntPlatformController::class .':listeventecarte');
+
 });
+
 
 $app->group('/postcash-sen',function(){
 
@@ -217,6 +227,41 @@ $app->group('/postcash-sen',function(){
 
 });
 
+
+$app->group('/wizall-sen',function(){
+
+    $this->post('/intouchCashin',App\Controllers\WizallPlatformController::class .':intouchCashin');
+
+    $this->post('/intouchCashout',App\Controllers\WizallPlatformController::class .':intouchCashout');
+
+    $this->post('/intouchPayerFactureSde',App\Controllers\WizallPlatformController::class .':intouchPayerFactureSde');
+
+    $this->post('/intouchRecupereFactureSde',App\Controllers\WizallPlatformController::class .':intouchRecupereFactureSde');
+
+    $this->post('/intouchPayerFactureSenelec',App\Controllers\WizallPlatformController::class .':intouchPayerFactureSenelec');
+
+    $this->post('/intouchRecupereFactureSenelec',App\Controllers\WizallPlatformController::class .':intouchRecupereFactureSenelec');
+
+});
+
+
+$app->group('/facturier-sen',function(){
+
+    $this->post('/reglementsde',App\Controllers\FacturierPlatformController::class .':reglementsde');
+
+    $this->post('/detailreglementsde',App\Controllers\FacturierPlatformController::class .':detailreglementsde');
+
+    $this->post('/achatrapido',App\Controllers\FacturierPlatformController::class .':achatrapido');
+
+    $this->post('/achatcodewoyofal',App\Controllers\FacturierPlatformController::class .':achatcodewoyofal');
+
+    $this->post('/detailreglementsenelec',App\Controllers\FacturierPlatformController::class .':detailreglementsenelec');
+
+    $this->post('/reglementsenelec',App\Controllers\FacturierPlatformController::class .':reglementsenelec');
+
+    $this->post('/paiementoolusolar',App\Controllers\FacturierPlatformController::class .':paiementoolusolar');
+
+});
 
 
 $app->group('/ecom-sen',function(){
@@ -250,17 +295,54 @@ $app->group('/ecom-sen',function(){
 });
 
 
+$app->group('/maps-sen',function(){
 
-/////////////////////////////////
-///
-$app->group('/orangemoney',function(){
+    $this->post('/listmaps',App\Controllers\MapsPlatformController::class .':listmaps');
+
+    $this->post('/listmapsdepart',App\Controllers\MapsPlatformController::class .':listmapsdepart');
+
+    $this->post('/listmapspardepart',App\Controllers\MapsPlatformController::class .':listmapspardepart');
+
+});
+
+
+$app->group('/om-sen',function(){
+
+    $this->post('/requerirControllerOM',App\Controllers\OrangemoneyPlatformController::class .':requerirControllerOM');
+
+    $this->post('/verifierReponseOM',App\Controllers\OrangemoneyPlatformController::class .':verifierReponseOM');
+
+    $this->post('/demanderAnnulationOM',App\Controllers\OrangemoneyPlatformController::class .':demanderAnnulationOM');
+
+    $this->post('/isDepotCheckAuthorized',App\Controllers\OrangemoneyPlatformController::class .':isDepotCheckAuthorized');
+
     $this->post('/depot',App\Controllers\OrangemoneyPlatformController::class .':depot');
+
     $this->post('/reponse',App\Controllers\OrangemoneyPlatformController::class .':reponse');
+
 });
 
 
-$app->group('/wizall',function(){
-    $this->post('/recuperefacturesde',App\Controllers\WizallPlatformController::class .':recuperefacturesde');
+$app->group('/tc-sen',function(){
+
+    $this->post('/requerirControllerTC',App\Controllers\TigocashPlatformController::class .':requerirControllerTC');
+
+    $this->post('/verifierReponseTC',App\Controllers\TigocashPlatformController::class .':verifierReponseTC');
+
+    $this->post('/demanderAnnulationTC',App\Controllers\TigocashPlatformController::class .':demanderAnnulationTC');
+
 });
 
+
+$app->group('/ec-sen',function(){
+
+    $this->post('/cashin',App\Controllers\ExpressocashPlatformController::class .':cashin');
+
+    $this->post('/cashout',App\Controllers\ExpressocashPlatformController::class .':cashout');
+
+    $this->post('/topup',App\Controllers\ExpressocashPlatformController::class .':topup');
+
+    $this->post('/checkbalance',App\Controllers\ExpressocashPlatformController::class .':checkbalance');
+
+});
 

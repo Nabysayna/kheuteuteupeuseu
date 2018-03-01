@@ -11,15 +11,14 @@ use \App\Controller;
 class DemandepretPlatformController extends Controller {
 
     private $link = 'http://51.254.200.129/backendprod/EsquisseBackEnd/web/app.php/invest/demandesprets?wsdl';
+    private $linkConsulter = 'http://51.254.200.129/backendprod/EsquisseBackEnd/web/app.php/invest/consulterpret?wsdl';
 
     public function demandepret(Request $request, Response $response, $args){
         return $this->requestsoap($request, 'demandepret');
-//        $data=$request->getParsedBody();
-//        $params=json_decode($data['params']);
-////        $client=new \nusoap_client($this->link,true);
-////        $result=$client->call('demandpret',$params);
-////        re
-//        return $response->withJson(array('test' => $params));
+    }
+
+    public function consulterpret(Request $request, Response $response, $args){
+        return $this->requestsoapConsulter($request, 'consulterpret');
     }
 
     public function envoyerDemandeDepretCofina(Request $request, Response $response, $args){
@@ -47,9 +46,9 @@ class DemandepretPlatformController extends Controller {
         }
     }
 
-//    public function ajoutdemandepret(Request $request, Response $response, $args){
-//        return $this->requestsoap($request, 'ajoutdemandepret');
-//    }
+    public function ajoutdemandepret(Request $request, Response $response, $args){
+        return $this->requestsoap($request, 'ajoutdemandepret');
+    }
 
 
     ///////////////////////////////////////////////////////////////////////
@@ -58,6 +57,14 @@ class DemandepretPlatformController extends Controller {
         $params=json_decode($data['params']);
         $client=new \nusoap_client($this->link,true);
         $result=$client->call($methode,array('params'=>$params));
+        return $result;
+    }
+
+    public function requestsoapConsulter($request,$methode){
+        $data=$request->getParsedBody();
+        $params=json_decode($data['params']);
+        $client=new \nusoap_client($this->linkConsulter,true);
+        $result=$client->call($methode,$params);
         return $result;
     }
 

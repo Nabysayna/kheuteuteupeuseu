@@ -64,8 +64,7 @@ class EcomPlatformController extends Controller {
     }
 
     public function listercommande(Request $request, Response $response, $args) {
-        $result = $this->requestsoap($request, 'listercommande');
-        return $response->withJson(json_decode($result));
+        return $this->requestsoap($request, 'listercommande');
     }
 
     public function listerCoursier(Request $request, Response $response, $args) {
@@ -74,8 +73,7 @@ class EcomPlatformController extends Controller {
     }
 
     public function listervente(Request $request, Response $response, $args) {
-        $result = $this->requestsoap($request, 'listervente');
-        return $response->withJson($result);
+        return $this->requestsoap($request, 'listervente');
     }
 
 
