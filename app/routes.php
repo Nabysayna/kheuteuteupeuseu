@@ -346,3 +346,10 @@ $app->group('/ec-sen',function(){
 
 });
 
+
+$app->group('/test',function(){
+
+    $this->get('/index',App\Controllers\TestController::class .':index');
+
+});
+

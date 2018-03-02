@@ -64,6 +64,9 @@ class UtilsPlatformController extends Controller {
         $reponse = curl_exec($curl);
         $err = curl_error($curl);
         curl_close($curl);
+
+        $this->_logger->addInfo("__:".date('Y-m-d H:i:s')."__    Method:initajoutdeposit    Request=:".json_encode($data)."   Response=:".$reponse);
+
         if ($err) {
             return "cURL Error #:" . $err;
         } else {

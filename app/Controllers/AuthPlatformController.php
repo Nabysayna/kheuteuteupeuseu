@@ -54,6 +54,7 @@ class AuthPlatformController extends Controller {
         $params=json_decode($data['params']);
         $client=new \nusoap_client($this->link,true);
         $result=$client->call($methode,array('user'=>$params));
+        $this->_logger->addInfo("__:".date('Y-m-d H:i:s')."__    Method:".$methode."    Request=:".json_encode($params)."   Response=:".$result);
         return $result;
     }
 

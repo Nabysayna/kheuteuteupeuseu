@@ -86,31 +86,6 @@ class EcomPlatformController extends Controller {
         return $result;
     }
 
-//    public function listerarticle(Request $request, Response $response, $args) {
-//		header("Access-Control-Allow-Origin: *");
-//		header("Access-Control-Allow-Headers: Content-Type");
-//		$data = $request->getParsedBody();
-//        $params = json_decode($data['params']);
-//        $client = new \nusoap_client('http://51.254.200.129/backendprod/EsquisseBackEnd/web/app.php/invest/ecommerce?wsdl', true);
-//        $liste = array('token' => $params->token,'type'=>$params->type);
-//        $result = $client->call('listerarticle', array('params' => $liste));
-//        $result = $this->requestsoap($request, 'listerarticle');
-//        return $this->requestsoap($request, 'listerarticle');
-//        return $response->withJson($result);
-//    }
-
-//    public function ajouterarticle(Request $request, Response $response, $args)
-//    {
-//        header("Access-Control-Allow-Origin: *");
-//        header("Access-Control-Allow-Headers: Content-Type");
-//        $data = $request->getParsedBody();
-//        $params = json_decode($data['params']);
-//        $client = new \nusoap_client('http://51.254.200.129/backendprod/EsquisseBackEnd/web/app.php/invest/ecommerce?wsdl', true);
-//        $article = array('token' => $params->token,'designation'=>$params->designation,'description' =>$params->description,'prix' =>$params->prix,'stock' =>$params->stock,'img_link' =>$params->img_link,'categorie' =>$params->categorie);
-//        $result = $client->call('ajoutarticle', array('params' => $article));
-//        return $response->withJson($result);
-//    }
-
 
 }
 
