@@ -264,6 +264,21 @@ $app->group('/facturier-sen',function(){
 });
 
 
+$app->group('/expressocash-sen',function(){
+
+    $this->post('/cashin',App\Controllers\ExpressoPlatformController::class .':cashin');
+
+    $this->post('/cashout',App\Controllers\ExpressoPlatformController::class .':cashout');
+
+    $this->post('/confirmCashout',App\Controllers\ExpressoPlatformController::class .':confirmCashout');
+
+    $this->post('/pinCashoutCheck',App\Controllers\ExpressoPlatformController::class .':pinCashoutCheck');
+
+    $this->post('/pinCashout',App\Controllers\ExpressoPlatformController::class .':pinCashout');
+
+});
+
+
 $app->group('/ecom-sen',function(){
 
     $this->post('/listerarticle',App\Controllers\EcomPlatformController::class .':listerarticle');
