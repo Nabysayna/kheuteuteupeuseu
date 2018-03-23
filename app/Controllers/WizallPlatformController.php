@@ -44,7 +44,7 @@ class WizallPlatformController extends Controller {
     }
 
 
-    ///////////////////////////////////////////////////////
+    
     public function requestsoap($request,$methode){
         $data=$request->getParsedBody();
         $params=json_decode($data['params']);
@@ -52,6 +52,15 @@ class WizallPlatformController extends Controller {
         $result=$client->call($methode,array('params'=>$params));
         return $result;
     }
+    
+    public function verifiercodebonachat(Request $request,Response $response){
+		header("Access-Control-Allow-Origin: *");
+		header("Access-Control-Allow-Headers: Content-Type");
+		//$data=array(status => "valid");
+		//$data=array("status"=> "valid", "customer"=> array("phone_number"=> "778150416", "first_name"=> "Yapele Sosthene", "last_name"=> "KA Assane"), "business_type"=> 0, "value"=> "100.000000", "model_voucher"=> array("is_cash"=> true, "product"=> "Bon Cash", "sub_product"=> "NA", "step_value"=> "1.000", "is_generic"=> true, "id"=> 3333, "is_secured"=> true, "minimum_value"=> "2000.000", "name"=> "Bon Cash ", "maximum_value"=> "3000.000", "network"=> "Transfert XOF", "currency_code"=> 952), "recipient"=> array("phone_number"=> "775054827", "is_valid"=> false, "first_name"=> "KA Assane", "last_name"=> "KA Assane", "needed_kyc_infos"=> "identityIsNeeded"), "id"=> 135137);
+		 //return $response->withJson($data);
+		 return "ok";
+	}
 
 }
 

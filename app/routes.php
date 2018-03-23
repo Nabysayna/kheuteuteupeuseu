@@ -241,6 +241,8 @@ $app->group('/wizall-sen',function(){
     $this->post('/intouchPayerFactureSenelec',App\Controllers\WizallPlatformController::class .':intouchPayerFactureSenelec');
 
     $this->post('/intouchRecupereFactureSenelec',App\Controllers\WizallPlatformController::class .':intouchRecupereFactureSenelec');
+    
+    $this->post('/verifiercodebonachat',App\Controllers\WizallPlatformController::class .':verifiercodebonachat');
 
 });
 
