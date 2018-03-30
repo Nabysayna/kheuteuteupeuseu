@@ -243,6 +243,16 @@ $app->group('/wizall-sen',function(){
     $this->post('/intouchRecupereFactureSenelec',App\Controllers\WizallPlatformController::class .':intouchRecupereFactureSenelec');
     
     $this->post('/verifiercodebonachat',App\Controllers\WizallPlatformController::class .':verifiercodebonachat');
+    
+    $this->post('/validerbonachat',App\Controllers\WizallPlatformController::class .':validerbonachat');
+    
+    $this->post('/validerenvoiboncash',App\Controllers\WizallPlatformController::class .':validerenvoiboncash');
+    
+    $this->post('/validerenvoibonachat',App\Controllers\WizallPlatformController::class .':validerenvoibonachat');
+    
+    $this->post('/getSendSecureID',App\Controllers\WizallPlatformController::class .':getSendSecureID');
+    
+    $this->post('/bonDebitVoucher',App\Controllers\WizallPlatformController::class .':bonDebitVoucher');
 
 });
 
